@@ -2,6 +2,7 @@
 **Repository Name**: `ecoArchitect-foundation`  
 **Organization**: UUON-Foundation  
 **URL**: https://github.com/UUON-Foundation/ecoArchitect-foundation  
+
 ---
 ## 📁 Recommended Repository Structure
 ```
