@@ -3,6 +3,97 @@
 **Organization**: UUON-Foundation  
 **URL**: https://github.com/UUON-Foundation/ecoArchitect-foundation  
 
+# 🌍 EcoArchitect: The PlanET Foundation
+
+[![CI Status](https://github.com)](#)
+[![License: USAL-1.0](https://shields.io)](LICENSE)
+[![Framework: React Native](https://shields.io)](#)
+[![Engine: Google Lens CV](https://shields.io)](#)
+
+> **"The scent of the earth itself is pleasant... we come from the same dirt, Extra Terrestrial."**
+> EcoArchitect is an open-source platform that transforms advanced machine learning into an ecological nervous system. By turning silicon back toward the soil, this architecture gives the planet a "New Eye" to track, calculate, and systematically eliminate physical waste.
+
+*   **The PLAN (Earthbound Stewardship):** The mobile front-end, spatial geohashing algorithms, and relational data flows designed to coordinate human cleanups, reward civic action, and track micro-level environmental changes.
+*   **The ET (Cosmic / Silicon Compute):** The computer vision pipelines that use Google Lens, offline TensorFlow Lite fallback models, and density reference indexes to identify physical objects, estimate mass, and calculate environmental debt instantly.
+
+---
+
+## 🏗️ Repository Architecture & Entry Points
+
+This repository is strictly organized to keep specialized services isolated. Below is a guide to where the core components of the **PlanET** platform live:
+
+### 📱 1. Frontend & AR Interface (`src/frontend/react-native/`)
+A cross-platform mobile suite that provides the user with an augmented interface to engage with their physical environment.
+*   `screens/ScanScreen.tsx`: The primary camera interface handling local frames before dispatching to the intelligence services.
+*   `screens/ARScreen.tsx`: Renders real-time spatial overlays using bounding boxes and AR anchors to highlight target materials on the ground.
+*   `utils/co2-calculator.ts` & `weight-calculator.ts`: Lightweight, client-side utility formulas that turn pixel classifications into immediate, actionable metrics.
+
+### 🧠 2. Computer Vision Intelligence (`src/cv/`)
+The "New Eye" of the architecture, converting raw imagery into material data.
+*   `google_lens_integration.py`: Connects edge imagery directly to cloud intelligence for ultra-precise item classification and material profile matching.
+*   `weight_estimation/estimator.py`: Cross-references detected bounding box volumes against `models/density-reference.json` to safely calculate an item’s weight without physical scales.
+*   `offline/tflite_model.py`: Edge-native fallback classifier ensuring features work seamlessly in remote areas with zero network connectivity.
+
+### 🗄️ 3. Backend & Spatial Analytics (`src/backend/`)
+The orchestration layer tracking cumulative ecological impact across the planet.
+*   `api/routes/impact.ts`: Tracks telemetry, geohashes data points, and updates global and local cleanup metrics.
+*   `websocket/server.ts`: Powers real-time live events, feeding updates to local leaderboards (`handlers/leaderboard-update.ts`) to drive community engagement.
+*   `services/EnvironmentalImpactService.ts`: Aggregates scanned items and calculates carbon mitigation and lifecycle metrics.
+
+---
+
+## 💻 Tech Stack Map
+
+| Domain | Technologies Used | Core Responsibilities |
+| :--- | :--- | :--- |
+| **Mobile Client** | React Native, TypeScript, Expo | User interface, AR rendering, GPS spatial collection |
+| **Compute Eye** | Python, OpenCV, TensorFlow Lite | Image preprocessing, local feature classification, mass inference |
+| **Cloud Brain** | Node.js, TypeScript, PostgreSQL | High-performance API routing, spatial geohashing optimizations |
+| **Telemetry** | WebSockets (ws) | Low-latency state sync and leaderboard event distribution |
+| **Infrastructure** | Docker, PostgreSQL Migrations | Sandboxed local testing, schema versioning, repeatable seed inputs |
+
+## 🚀 Quick Start & Environment Initialization
+
+Get your local machine up and running inside the sandboxed environment. 
+
+### Prerequisites
+Ensure your local environment has **Docker**, **Node.js LTS**, and **Python 3.10+** installed.
+
+### 1. Initialize the Base Workspace
+Run the developer provisioning script to check dependencies, generate environment configurations, and install workspace dependencies:
+```bash
+chmod +x scripts/setup-dev-environment.sh
+./scripts/setup-dev-environment.sh
+```
+
+### 2. Launch the Infrastructure
+Spin up the local PostgreSQL instance, complete with applied migrations and pre-loaded material density seed tables:
+```bash
+docker-compose up -d --build
+```
+
+### 3. Verify System Operations
+Execute the unified test suite to validate that your API routing, local vision components, and weight calculations match up:
+```bash
+./scripts/run-tests.sh
+```
+
+---
+
+## 📜 Contribution & Guardrails
+
+We operate under the **USAL-1.0 License**. We view code as a natural byproduct of turning sand into silicon to watch over the soil. 
+
+*   **To explore system workflows:** Please review the deep-dive manuals found in `architecture/UUON-EcoArchitect-DataFlow.md`.
+*   **To report performance bottlenecks:** Please leverage the standardized structure inside `.github/ISSUE_TEMPLATE/bug-report.md`.
+*   **To write features:** Ensure every new analytics module includes matching validation metrics in the `tests/unit/utils/` folder.
+
+---
+
+> *"The dirt of the desert builds a gritty resilience. Silicon is just sand with a purpose. Let's clean the house."*
+
+
+
 ---
 ## 📁 Recommended Repository Structure
 ```
